@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset = "utf-8">
+    <title>E Converter</title>
+    <style>
+        div.container {
+        width: 100%;
+        border: 1px solid gray;
+        }
+        footer {
+        padding: 1em;
+        color: white;
+        background-color: black;
+        clear: left;
+        text-align: center;
+        }
+        article {
+        margin-left: 1px;
+        padding: 2em;
+        overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class = container >
+        <h1 align='center'> Epoch Converter</h1>
+        <hr>
+        <article>
+            <p> <font size = "6">
+                <b><i>Convert time stamp to human readable date:</i></b>
+                </font>
+            </p>
+            <br>
+            <form method="get" >
+                <input type="text" placeholder="timestamp" name="timestamp" value = "{{timestamp}}">
+                <button type="submit">TimeStamp to Human date</button>
+            </form>
+            {% block datetime %}
+            {% endblock datetime %} 
+        </article>
+        <article>
+            <p> <font size = "6">
+                <b><i>Convert  human readable date to time stamp:</b></i>
+                </font> 
+            </p>
+            <br>
+            <form method="get">
+                <input type="datetime-local" placeholder="date" name="date">
+                <button type="submit">Human date to TimeStamp  </button>
+            </form>
+        </article>
+        {% block timestamp %}
+        {% endblock timestamp %}
+        {% block footer %}
+        <p align="center">
+            Copyright &copy; JoelRJ 2018
+        </p>
+        {% endblock footer %}
+    </div>
+</body>
+</html>
